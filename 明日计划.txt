@@ -1,0 +1,29 @@
+1、实现导出数据库中所有的表的结构：
+获取所有表明的：SQL：
+	#查找所有表的语句
+	select table_name from information_schema.tables 
+	where table_schema='当前数据库'
+
+获取表结构的SQL：
+	SELECT
+	COLUMN_NAME 列名,
+	
+		COLUMN_TYPE 数据类型,
+	
+		DATA_TYPE 字段类型,
+	
+		CHARACTER_MAXIMUM_LENGTH 长度,
+	
+		IS_NULLABLE 是否为空,
+	
+		COLUMN_DEFAULT 默认值,
+	
+		COLUMN_COMMENT 备注 
+
+	FROM
+	
+	INFORMATION_SCHEMA.COLUMNS 
+	
+	WHERE table_schema = '库名' 
+	
+	AND table_name = '表名'
